@@ -59,7 +59,10 @@ class TodoList extends React.Component {
       console.log(item)
       axios.put(`http://localhost:4000/Todos/${id}`, item[0])
         .then(item => {
-          console.log(item)
+          return axios.get('http://localhost:4000/Todos/')
+        })
+        .then(response => {
+          this.setState({ todolists: response.data })
         })
         .catch(err => {
           console.log(err)
