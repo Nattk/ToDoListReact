@@ -16,7 +16,7 @@ class TodoList extends React.Component {
         this.setState({ todolists: todos.data })
       })
         .catch(err => {
-          console.log(err)
+          alert(err)
         })
     }
 
@@ -36,7 +36,7 @@ class TodoList extends React.Component {
         this.setState({ todolists: todolist.data })
       })
         .catch(err => {
-          console.log(err)
+          alert(err)
         })
     }
 
@@ -57,7 +57,6 @@ class TodoList extends React.Component {
           item.done = !item.done
           return item
         })
-      console.log(item)
       axios.put(`http://localhost:4000/Todos/${id}`, item[0])
         .then(item => {
           return axios.get('http://localhost:4000/Todos/')
@@ -66,7 +65,7 @@ class TodoList extends React.Component {
           this.setState({ todolists: response.data })
         })
         .catch(err => {
-          console.log(err)
+          alert(err)
         })
     }
 
