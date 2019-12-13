@@ -1,0 +1,22 @@
+.listItem{
+    display: flex;
+    flex-direction: row;
+    border-radius: 3px;
+    box-shadow: 0 1px 0 rgba(9,30,66,.25);
+    background-color: white;
+    margin: 1rem;
+    padding: 1rem;
+    transition: 300ms all;
+
+    p{
+        flex-grow: 1;
+    }
+
+    .img{
+        width:3rem
+    }
+
+    .done{
+        text-decoration:line-through;
+    }
+}

@@ -1,0 +1,11 @@
+.wrapInput{
+    display: flex;
+    flex-direction:row;
+    
+    .input{
+        height: 4rem;
+        border: none;
+        flex-grow:1;
+    }
+}
+

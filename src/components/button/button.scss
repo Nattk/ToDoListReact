@@ -1,0 +1,17 @@
+button{    
+    background: none;
+    border:none;
+    cursor: pointer;
+    transition: 300ms background-color ;
+    &:hover{
+        background-color: rgb(212, 212, 212);
+    }
+
+    &.add{
+        background-color:white;
+
+        &:hover{
+            background-color: rgb(153, 153, 153);
+        }
+    }
+}

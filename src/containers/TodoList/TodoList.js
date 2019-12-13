@@ -2,6 +2,7 @@ import React from 'react'
 import ListCard from '../../components/listCard/listCard'
 import ListItem from '../../components/listItem/listItem'
 import Input from '../../components/input/input'
+import './TodoList.scss'
 import axios from 'axios'
 
 class TodoList extends React.Component {
@@ -72,13 +73,13 @@ class TodoList extends React.Component {
     render () {
       return (
         <main>
-          <article>
+          <article className="TodoList">
             <h1>Créer une TodoList</h1>
-            <Input title="ajouter une tache" change={(e) => this.handleChange(e)} btnClicked={(index) => this.handleAddTask(index)}/>
             <ListCard>
+              <Input title="ajouter une tache" change={(e) => this.handleChange(e)} btnClicked={(index) => this.handleAddTask(index)}/>
               {this.state.todolists &&
                 this.state.todolists.map((item) => (
-                  <ListItem key={item.id} task={item.title} delete={() => this.handleDeleteTask(item.id)} done={() => this.handleDoneTask(item.id)}/>
+                  <ListItem key={item.id} task={item.title} state={item.done} delete={() => this.handleDeleteTask(item.id)} done={() => this.handleDoneTask(item.id)}/>
                 ))
               }
             </ListCard>
